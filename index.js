@@ -5,4 +5,19 @@ function getComputerChoice(){
     console.log(choice);
     return "scissors";
 }
-console.log(getComputerChoice());
+
+
+function getHumanChoice(){
+    let choice = prompt("Enter your choice:");
+    if(choice=="rock"){
+        return "rock";
+    }
+    if(choice=="paper"){
+        return "paper";
+    }
+    if(choice=="scissors"){
+        return "scissors";
+    }
+
+}
+alert(getHumanChoice());
