@@ -25,7 +25,7 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice){
     if(humanChoice=="rock" && computerChoice=="paper"){
-        console.log("You lose! Paper beats Rock”.");
+        console.log("You lose! Paper beats Rock.");
         computerScore = computerScore + 1;
     }
     if(humanChoice=="paper" && computerChoice=="scissors"){
@@ -49,10 +49,27 @@ function playRound(humanChoice, computerChoice){
         console.log("You win! Scissors beat Paper.");
         humanScore = humanScore + 1;
     }
-    
+    return "Round over.";
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+
+function playGame(){
+    for(let i=1;i<=5;i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);            
+    }
+    if(humanScore>computerScore){
+        console.log("You've won!");
+    }
+    if(humanScore>computerScore){
+        console.log("You've lost!");
+    }
+    if(humanScore==computerScore){
+        console.log("It's a tide!");
+    }
+}
+
+playGame();
